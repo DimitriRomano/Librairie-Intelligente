@@ -3,14 +3,16 @@
         private $id;
         private $titre;
         private $annee_edition;
+        private $auteur;
         private $genre;
-        private $resume;
+        private $resume;    
 
-        public function __construct($id,$titre,$anne_edition,$genre,$resume)
+        public function __construct($id,$titre,$anne_edition,$auteur,$genre,$resume)
         {
             $this->setId($id);
             $this->setTitre($titre);
             $this->setAnnee_edition($anne_edition);
+            $this->setAuteur($auteur);
             $this->setGenre($genre);
             $this->setResume($resume);
         }
@@ -111,6 +113,26 @@
         public function setResume($resume)
         {
                 $this->resume = $resume;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of auteur
+         */ 
+        public function getAuteur()
+        {
+                return $this->auteur;
+        }
+
+        /**
+         * Set the value of auteur
+         *
+         * @return  self
+         */ 
+        public function setAuteur($auteur)
+        {
+                $this->auteur = $auteur;
 
                 return $this;
         }

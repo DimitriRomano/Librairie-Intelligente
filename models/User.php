@@ -1,21 +1,23 @@
 <?php
     class User{
         private $id;
-        private $login;
         private $prenom;
+        private $nom;
         private $age;
         private $region;
         private $type_lecture;
+        private $adresse_mail;
         
 
-        public function __construct($id,$login,$prenom,$age,$region,$type_lecture)
+        public function __construct($id,$login,$prenom,$nom,$age,$region,$type_lecture,$adresse_mail)
         {
             $this->setId($id);
-            $this->setLogin($login);
             $this->setPrenom($prenom);
+            $this->setNom($nom);
             $this->setAge($age);
             $this->setRegion($region);
             $this->setType_lecture($type_lecture);
+            $this->setAdresse_mail($adresse_mail);
         }
 
         /**
@@ -135,6 +137,46 @@
         public function setLogin($login)
         {
                 $this->login = $login;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of adresse_mail
+         */ 
+        public function getAdresse_mail()
+        {
+                return $this->adresse_mail;
+        }
+
+        /**
+         * Set the value of adresse_mail
+         *
+         * @return  self
+         */ 
+        public function setAdresse_mail($adresse_mail)
+        {
+                $this->adresse_mail = $adresse_mail;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nom
+         */ 
+        public function getNom()
+        {
+                return $this->nom;
+        }
+
+        /**
+         * Set the value of nom
+         *
+         * @return  self
+         */ 
+        public function setNom($nom)
+        {
+                $this->nom = $nom;
 
                 return $this;
         }
