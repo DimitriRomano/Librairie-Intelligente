@@ -2,19 +2,21 @@
     class Livre{
         private $id;
         private $titre;
-        private $annee_edition;
         private $auteur;
+        private $annee_edition;
         private $genre;
-        private $resume;    
+        private $resume; 
+        private $categorie;   
 
-        public function __construct($id,$titre,$anne_edition,$auteur,$genre,$resume)
+        public function __construct($id,$titre,$auteur,$annee_edition,$genre,$resume,$categorie)
         {
             $this->setId($id);
             $this->setTitre($titre);
-            $this->setAnnee_edition($anne_edition);
+            $this->setAnnee_edition($annee_edition);
             $this->setAuteur($auteur);
             $this->setGenre($genre);
             $this->setResume($resume);
+            $this->setCategorie($categorie);
         }
 
         /**
@@ -133,6 +135,26 @@
         public function setAuteur($auteur)
         {
                 $this->auteur = $auteur;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of categorie
+         */ 
+        public function getCategorie()
+        {
+                return $this->categorie;
+        }
+
+        /**
+         * Set the value of categorie
+         *
+         * @return  self
+         */ 
+        public function setCategorie($categorie)
+        {
+                $this->categorie = $categorie;
 
                 return $this;
         }
