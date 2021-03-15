@@ -170,3 +170,53 @@
       border-radius: 0;
     }
   }
+
+  /* ligne affichage */
+  
+  .card-body{
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0080ff; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0080ff; 
+}
+
+  /* section scroll horizontale */
+
+
+  /* .scrolling-wrapper{
+    display: flex;
+    overflow-x: auto; 
+  }
+
+  .card{
+    flex: 0 0 auto;
+    width: max-content;
+    margin-right: 10px;
+  }
+
+  .scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+  } */
+
+
+ 

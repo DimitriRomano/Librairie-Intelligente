@@ -1,5 +1,6 @@
 <?php
-require_once "./models/LivreManager.php";
+require "./models/LivreManager.php";
+require "./models/EmpruntManager.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +10,8 @@ require_once "./models/LivreManager.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -28,15 +29,91 @@ require_once "./models/LivreManager.php";
   </ul>
 </nav>
 
+<!-- Section livres recents  -->
+
 <?php 
 
 $LivreManager = new LivreManager();
 $LivreManager->chargementLivres();
 $livres = $LivreManager->getLivres();
-echo $livres[0]->getTitre();
-
-
+$livresrecent = $LivreManager->getRecentLivres(5);
 ?>
+<section class="section-recent">
+<div class="row">
+          <div class="col">
+            <h2 class="display-3 text-center bg-info py-4 mb-3 d-none d-md-block">Livres les plus récents </h2>
+          </div>
+ <div class=" row mx-3">
+   
+<?php
+for($i=0;$i<count($livresrecent);$i++):
+?>
+<div class="card col-sm px-0">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title"><?=$livresrecent[$i]->getTitre() ?></h5>
+    <p class="card-text d">
+    <?=$livresrecent[$i]->getResume() ?>
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><?=$livresrecent[$i]->getAuteur() ?></li>
+    <li class="list-group-item"><?=$livresrecent[$i]->getGenre() ?></li>
+    <li class="list-group-item"><?=$livresrecent[$i]->getAnnee_edition() ?>s</li>
+  </ul>
+</div>
+<?php
+endfor;
+?>
+</div>
+</section>
+
+
+<!-- Section livres populaires  -->
+
+<?php
+  $EmpruntManager = new EmpruntManager();
+  $EmpruntManager->chargementEmprunts();
+  $livresPopulaires = $EmpruntManager->getIdLivresPopulaires(5);
+  
+?>
+
+<section class="section-populaire">
+<div class="row">
+          <div class="col">
+            <h2 class="display-3 text-center bg-info py-4 mb-3 d-none d-md-block">Livres populaires </h2>
+          </div>
+ <div class=" row mx-3">
+<?php
+for($i=0;$i<count($livresPopulaires);$i++):
+?>
+<div class="card col-sm px-0">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title"><?=$livresPopulaires[$i]->getTitre() ?></h5>
+    <p class="card-text d">
+    <?=$livresPopulaires[$i]->getResume() ?>
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><?=$livresPopulaires[$i]->getAuteur() ?></li>
+    <li class="list-group-item"><?=$livresPopulaires[$i]->getGenre() ?></li>
+    <li class="list-group-item"><?=$livresPopulaires[$i]->getAnnee_edition() ?>s</li>
+  </ul>
+</div>
+<?php
+endfor;
+?>
+</div> 
+</section>
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
