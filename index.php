@@ -41,7 +41,7 @@ $livresrecent = $LivreManager->getRecentLivres(5);
 <section class="section-recent">
 <div class="row">
           <div class="col">
-            <h2 class="display-3 text-center bg-info py-4 mb-3 d-none d-md-block">Livres les plus récents </h2>
+            <h2 class="display-3 text-center bg-info py-4 ">Livres les plus récents </h2>
           </div>
  <div class=" row mx-3">
    
@@ -85,7 +85,7 @@ endfor;
 <section class="section-populaire">
 <div class="row">
           <div class="col">
-            <h2 class="display-3 text-center bg-info py-4 mb-3 d-none d-md-block">Livres populaires </h2>
+            <h2 class="display-3 text-center bg-info py-4 ">Livres populaires </h2>
           </div>
  <div class=" row mx-3">
 <?php
