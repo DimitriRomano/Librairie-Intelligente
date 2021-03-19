@@ -29,7 +29,7 @@ require "./models/EmpruntManager.php";
   </ul>
 </nav>
 
-<!-- Section livres recents  -->
+<!-- Section livres recents    -->
 
 <?php 
 
