@@ -79,6 +79,7 @@ endfor;
   $EmpruntManager = new EmpruntManager();
   $EmpruntManager->chargementEmprunts();
   $livresPopulaires = $EmpruntManager->getIdLivresPopulaires(5);
+  $list = $EmpruntManager->PropositionsLivres(1);
   
 ?>
 
