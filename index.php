@@ -3,6 +3,12 @@ require "./models/LivreManager.php";
 require "./models/EmpruntManager.php";
 ?>
 
+<!--
+  @brief Index.php Page principal pour l'affichage des différentes propostions
+
+  -->
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,10 +39,10 @@ require "./models/EmpruntManager.php";
 
 <?php 
 
-$LivreManager = new LivreManager();
-$LivreManager->chargementLivres();
+$LivreManager = new LivreManager(); 
+$LivreManager->chargementLivres(); //chargment de l'ensemble de livre de le BD dans le LivreManager
 $livres = $LivreManager->getLivres();
-$livresrecent = $LivreManager->getRecentLivres(5);
+$livresrecent = $LivreManager->getRecentLivres(5); //selection des 5 livre desp lus recents comme propositions
 ?>
 <section class="section-recent">
 <div class="row">
@@ -77,9 +83,9 @@ endfor;
 
 <?php
   $EmpruntManager = new EmpruntManager();
-  $EmpruntManager->chargementEmprunts();
-  $livresPopulaires = $EmpruntManager->getIdLivresPopulaires(5);
-  $list = $EmpruntManager->PropositionsLivres(1);
+  $EmpruntManager->chargementEmprunts(); //chargement de tout les emprunts dans Empruntmanager
+  $livresPopulaires = $EmpruntManager->getIdLivresPopulaires(5); //affiche les 5 livres les plus populaires
+  $list = $EmpruntManager->PropositionsLivres(1); //propositions personnalisées par rapport à l'utilisateur
   
 ?>
 
@@ -108,6 +114,42 @@ for($i=0;$i<count($livresPopulaires);$i++):
     <li class="list-group-item"><?=$livresPopulaires[$i]->getAuteur() ?></li>
     <li class="list-group-item"><?=$livresPopulaires[$i]->getGenre() ?></li>
     <li class="list-group-item"><?=$livresPopulaires[$i]->getAnnee_edition() ?>s</li>
+  </ul>
+</div>
+<?php
+endfor;
+?>
+</div> 
+</section>
+
+
+<!-- Section propositions  -->
+
+<section class="section-proposition">
+<div class="row">
+          <div class="col">
+            <h2 class="display-3 text-center bg-info py-4 ">Proposition Utilisateur </h2>
+          </div>
+ <div class=" row mx-3">
+<?php
+for($i=0;$i<count($list);$i++):
+?>
+<div class="card col-sm px-0">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title"><?=$list[$i]->getTitre() ?></h5>
+    <p class="card-text d">
+    <?=$list[$i]->getResume() ?>
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><?=$list[$i]->getAuteur() ?></li>
+    <li class="list-group-item"><?=$list[$i]->getGenre() ?></li>
+    <li class="list-group-item"><?=$list[$i]->getAnnee_edition() ?></li>
   </ul>
 </div>
 <?php

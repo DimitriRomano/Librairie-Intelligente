@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 15 mars 2021 à 00:01
+-- Généré le : mar. 06 avr. 2021 à 18:53
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `livre` (
   `resume` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `categorie` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id_livre`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `livre`
@@ -88,7 +88,8 @@ INSERT INTO `livre` (`id_livre`, `titre`, `auteur`, `annee_edition`, `genre`, `r
 (4, 'Ne le dis à personne', 'Harlan Coben', '1990-09-20', 'policier', 'Un des plus célèbres livres d’Harlan Coben. Le héros vit dans le souvenir de sa femme, assassinée par un serial killer. Un jour, il croit l’apercevoir dans la foule', 'reflexion'),
 (5, 'La planète des singes', 'Pierre Boule', '2001-09-04', 'science-fiction', 'Y a-t-il des êtres humains ailleurs que dans notre galaxie ? C\'est la question que se pose Ulysse Mérou, lorsque, de leur vaisseau spatial, ils observent le paysage d\'une planète proche de Bételgeuse: on y aperçoit des villes, des routes curieusement semblables à celle de notre terre. Après s\'y être posés, les trois hommes découvrent que la planète est habitée par des singes.', 'détente'),
 (6, 'Cristal qui songe', 'Theodore Sturgeon', '2011-11-30', 'science-fiction', 'Lorsqu\'il est renvoyé de l\'école à l\'âge de huit ans, cela fait déjà plusieurs années que Horty mange des fourmis en cachette.\r\nFuyant alors la demeure de ses parents adoptifs qui le martyrisent, le gamin trouve refuge au sein d\'un cirque ambulant où il devient le partenaire de deux jeunes naines, Zena et Bunny.\r\nMais les personnages les plus extraordinaires du cirque restent son féroce directeur, surnommé le cannibale, et son étrange collection de cris', 'détente'),
-(7, 'La Patrouille du temps', 'Poul Anderson', '1960-12-10', 'science-fiction', 'Dans un lointain futur, les descendants des Hommes, les Danéliens, ont découvert le moyen de voyager dans le temps. Mais pour éviter que des pirates mal intentionnés ne changent le cours de l\'histoire, changements qui impliqueraient leur propre non-existence, et donc dans un but essentiellement égoïste mais légitime - de leur point de vue -, ils ont créé la « Patrouille du temps » qui dispose de bureaux et d\'agents à toutes les époques', 'détente');
+(7, 'La Patrouille du temps', 'Poul Anderson', '1960-12-10', 'science-fiction', 'Dans un lointain futur, les descendants des Hommes, les Danéliens, ont découvert le moyen de voyager dans le temps. Mais pour éviter que des pirates mal intentionnés ne changent le cours de l\'histoire, changements qui impliqueraient leur propre non-existence, et donc dans un but essentiellement égoïste mais légitime - de leur point de vue -, ils ont créé la « Patrouille du temps » qui dispose de bureaux et d\'agents à toutes les époques', 'détente'),
+(8, 'Ravage', 'René Barjavel', '1972-09-27', 'science-fiction', 'Vous ne savez pas ce qui est arrivé ? Tous les moteurs d\'avions se sont arrêtés hier à la même heure, juste au moment où le courant flanchait partout. Tous ceux qui s\'étaient mis en descente pour atterrir sur la terrasse sont tombés comme une grêle. Vous n\'avez rien entendu, là-dessous ?', 'detente');
 
 -- --------------------------------------------------------
 

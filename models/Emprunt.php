@@ -1,14 +1,14 @@
 <?php
 /**
- * \class Emprunt Emprunt.php
- * \brief classe de donnée Emprunt similaire à la table emprunter de la base de donnée
+ * @class Emprunt Emprunt.php
+ * @brief classe de donnée Emprunt similaire à la table emprunter de la base de donnée
  */
     class  Emprunt {
             /**
-             * /param $id
-             * /param $date
-             * /param $id_client référence à l'utilisateur
-             * /param $id_livre référence à livre
+             * @param $id
+             * @param $date
+             * @param $id_client référence à l'utilisateur
+             * @param $id_livre référence à livre
              */
         private $id;
         private $date_emprunt;

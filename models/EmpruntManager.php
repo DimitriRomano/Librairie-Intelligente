@@ -1,17 +1,12 @@
 <?php
-    /**
-     * \brief EmpruntManager.php
-     * 
-     */
-
-
+    
     require_once "Bdd.php";
     require_once "Emprunt.php";
     require_once "LivreManager.php";
     require_once "Livre.php";
 
     /**
-     *  \class EmpruntManager EmpruntManager.php
+     *  @class EmpruntManager EmpruntManager.php
      * Classe reliée à la base de donnée pour gérer les traitements lié à la table emprunter 
      * possède un attribut privée $emprunts qui est un tableau et contient la liste des emprunts de tout les utilisateurs
      */
@@ -28,7 +23,7 @@
         }
 
         /**
-         * \fn fonction pour charger le tableau $emprunts à partir de la base de donnée
+         * @fn fonction pour charger le tableau $emprunts à partir de la base de donnée
          * 
          */
         public function chargementEmprunts(){
@@ -44,9 +39,9 @@
         }
 
         /**
-         * \fn fonction qui permet d'obtenir la liste des livres populaires
-         * \param $limite nombre de livres à retenir
-         * \return $livresPopulaireBD liste de livres populaires
+         * @fn fonction qui permet d'obtenir la liste des livres populaires
+         * @param $limite nombre de livres à retenir
+         * @return $livresPopulaireBD liste de livres populaires
          */
         public function getIdLivresPopulaires($limite=5){
             // requête de type select en fonction de id_livre et la fréquence d'apparition de chaque livre
@@ -66,9 +61,9 @@
         }
 
         /**
-         * \fn fonction qui retourne la liste des emprunts d'un utilisateur en particulier
-         * \param $id_user
-         * \return $listeEmpruntsUser
+         * @fn fonction qui retourne la liste des emprunts d'un utilisateur en particulier
+         * @param $id_user
+         * @return $listeEmpruntsUser
          */
         public function getEmpruntsById($id_user){
             $listeEmpruntsUser = null;
@@ -81,9 +76,9 @@
         }
 
         /**
-         * \fn Fonction qui propose 5 livres en fonction des livres emprunter de l'utilisateur
-         * \param $id_user
-         * \return $listePropositions liste de livre sous forme de tableau d'objet Livre
+         * @fn Fonction qui propose 5 livres en fonction des livres emprunter de l'utilisateur
+         * @param $id_user
+         * @return $listePropositions liste de livre sous forme de tableau d'objet Livre
          */
         public function PropositionsLivres($id_user){
             $lManager = new LivreManager();
