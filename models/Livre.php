@@ -1,13 +1,30 @@
 <?php
+
+/**
+ * \class Livre Livre.php
+ * \brief classe de donnée de l'objet Livre
+ *  */        
     class Livre{
+            /**
+             * Attributs de l'objet Livre
+             * \param $id
+             * \param $titre
+             * \param $auteur
+             * \param $annee_edition
+             * \param $genre
+             * \param $categorie détente ou reflexion ou rien
+             */
         private $id;
         private $titre;
         private $auteur;
         private $annee_edition;
         private $genre;
         private $resume; 
-        private $categorie;   
+        private $categorie;  
 
+        /**
+         * \fn constructeur qui prend en parametre un id, un titre, un auteur, une année d'édition, un genre , un résumé, une catégorie et instancie l'objet Livre
+         */
         public function __construct($id,$titre,$auteur,$annee_edition,$genre,$resume,$categorie)
         {
             $this->setId($id);

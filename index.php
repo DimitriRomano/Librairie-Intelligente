@@ -21,7 +21,11 @@ require "./models/EmpruntManager.php";
     <li class="item"><a href="#">Home</a></li>
     <li class="item"><a href="#">Recherche</a></li>
     <li class="item"><a href="#">Session utilisateur</a></li>
-   
+    <li class="item"><a href="#">About</a></li>
+    
+    <li class="item button"><a href="#">Log In</a></li>
+    <li class="item button secondary"><a href="#">Sign Up</a></li>
+    <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
   </ul>
 </nav>
 
@@ -75,6 +79,7 @@ endfor;
   $EmpruntManager = new EmpruntManager();
   $EmpruntManager->chargementEmprunts();
   $livresPopulaires = $EmpruntManager->getIdLivresPopulaires(5);
+  $list = $EmpruntManager->PropositionsLivres(1);
   
 ?>
 
